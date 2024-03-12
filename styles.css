@@ -1,3 +1,4 @@
+/* GLOBAL SETTINGS */
 * {
   font-family: system-ui, sans-serif;
   font-weight: 300;
@@ -5,62 +6,127 @@
   padding: 0;
 }
 
+h1,
+h2 {
+  font-weight: 700;
+}
+
+.main-nav a {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(16, 16, 86);
+}
+
 .container {
-  height: 100vh;
   background-color: rgb(233, 233, 233);
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 300px 1fr;
   grid-template-rows: auto;
+}
+
+/* SIDEBAR CONTENT */
+.logo {
+  color: #fefefe;
 }
 
 .sidebar {
   background-color: hsl(203, 73%, 66%);
   grid-area: 1/1/4/2;
   padding-left: 10%;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .sidebar ul li {
+  font-weight: 500;
   list-style: none;
   line-height: 3rem;
-  font-size: 1.5rem;
 }
 
+/* HEADER CONTENT */
 .header {
   background-color: #fefefe;
+  padding: 20px;
   grid-area: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
 }
 
+.header-btn {
+  padding: 20px;
+  background-color: hsl(203, 73%, 66%);
+  border: 0;
+  border-radius: 30px;
+  font-weight: 500;
+  color: #fefefe;
+  transition: transform 0.3s ease;
+}
+
+.header-btn:hover {
+  background-color: hsl(203, 73%, 50%);
+  color: black;
+  cursor: pointer;
+  transform: translate(1px, 1px);
+}
+
+.searchbar,
+.header-top-left {
+  grid-area: 1 / 1/ 2 / 2;
+  height: 20px;
+  border: 1px solid #bebebe;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  color: #454545;
+}
+
+.header-top-right {
+  grid-area: 1 / 2 / 2/ 3;
+}
+
+.lower-header-left {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+/* MAIN CONTENT AREA  */
 .main-content {
   grid-area: 2 / 2/ 4/ 4;
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 50px;
   gap: 10px;
-}
-
-.main-content-header {
-  grid-area: 1 / 1 / 2 / 3;
-  padding-bottom: 10px;
 }
 
 .projects {
+  grid-area: 2 / 1 / 100 / 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .project-item {
   background-color: #fefefe;
-  border: 1px solid #bebebe;
+  border-left: 7px solid #f6c23f;
   border-radius: 10px;
   padding: 10px;
-  width: 250px;
+  box-shadow: 1px 1px 6px #d7d7d7;
+  overflow: auto;
 }
 
 .right-sidebar {
   grid-area: 1 / 2 / 2 / 2;
+  display: grid;
+  grid-template-rows: 50px;
+  gap: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .announcement-content {
